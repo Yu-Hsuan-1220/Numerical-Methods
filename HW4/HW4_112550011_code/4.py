@@ -8,7 +8,6 @@ def simpson_one_third(fx, h):
     return (h / 3) * result
 
 def simpson_three_eighth(fx, h):
-    
     return (3 * h / 8) * (fx[0] + 3 * fx[1] + 3 * fx[2] + fx[3])
 
 # Given values
