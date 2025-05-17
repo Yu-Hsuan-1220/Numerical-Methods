@@ -27,21 +27,22 @@ def apporximate_value(idx, x0):
     return coeff[idx][1] + coeff[idx][2] * ((x0 - x_vals[idx]) + (x0 - x_vals[idx + 1]))
 
 coeff = divided_difference(x_vals, y_vals)
-print(f"Divided differences coefficients: {coeff}")
+np.set_printoptions(precision=5, suppress=True)
+print(f"Divided differences coefficients:")
+print(coeff)
 
-
-Ture_value = f_prime(0.268)
+True_value = f_prime(0.268)
 min_error = float('inf')
 best_approx = None
 Used_idx = None
 for i in range(n-2):
     x0 = 0.268
     approx_value = apporximate_value(i, x0)
-    error = abs(approx_value - Ture_value)
+    error = abs(approx_value - True_value)
     if error < min_error:
         min_error = error
         best_approx = approx_value
         Used_idx = i
 
 print(f"Used x for approximation: {x_vals[Used_idx]}, {x_vals[Used_idx + 1]}, {x_vals[Used_idx + 2]}")
-print(f"Best approximate value: {best_approx}, True value: {Ture_value}, Error: {min_error}")
+print(f"Best approximate value: {best_approx}, True value: {True_value}, Error: {min_error}")

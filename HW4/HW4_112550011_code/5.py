@@ -17,7 +17,7 @@ while True:
         sum += (f(cur) + f(1)) * (1 - cur) / 2
        
     if abs(sum - last) < 0.02:
-        print(f"Approximate value: {sum}, h = {h}, Error: {abs(sum - last)}")
+        print(f"Approximate value: {sum}, h = {h}, Error between two iterations: {abs(sum - last)}")
         break
     
     last = sum

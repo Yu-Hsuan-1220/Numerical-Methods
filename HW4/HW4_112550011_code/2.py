@@ -20,7 +20,9 @@ def function_difference(x, y):
 x = [0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5]
 y = [f(i) for i in x]
 coeff = function_difference(x, y)
-print(f"Divided differences coefficients: {coeff}")
+np.set_printoptions(precision=5, suppress=True)
+print(f"Divided differences coefficients:")
+print(coeff)
 
 target = 0.72
 h = 0.2
